@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Exercise</title>
-</head>
-<body>
-  <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Exercise</title>
+    <style>
+      body {
+        background-image: url("./assets/images/background.jpg");
+        background-position: bottom center;
+        background-color: green;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- AUDIO HTML GOES HERE -->
+      <audio src="./assets/audio/piano.wav" controls muted loop></audio>
+      <!-- VIDEO HTML GOES HERE -->
+      <video
+        src="./assets/video/ocean.mp4"
+        controls
+        poster="./assets/images/poster.jpg"
+      ></video>
+      <!-- IMAGE MAP HTML GOES HERE-->
+      <img
+        width="600px"
+        src="./assets/images/fruit_table.jpg"
+        usemap="#fruit"
+        alt="fruits-image"
+      />
+      <map id="fruit">
+        <area
+          shape="rect"
+          coords="0,0,300,400"
+          href="https://en.wikipedia.org/wiki/Lavandula"
+          alt=""
+        />
+        <area
+          shape="rect"
+          coords="300,400,600,600"
+          href="https://en.wikipedia.org/wiki/Orange_(fruit)"
+          alt=""
+        />
+        <area shape="circle" coords="450,200,100" href="" alt="" />
+      </map>
+      <!-- CANVAS HTML GOES HERE -->
+      <canvas id="canvas" width="500" height="500" style="background-color: gray;"></canvas>
+    </div>
 
-    <!-- VIDEO HTML GOES HERE -->
+    <script>
+      /* CANVAS JAVASCRIPT GOES HERE */
+      const cvs = canvas.getContext("2d");
 
-    <!-- IMAGE MAP HTML GOES HERE-->
+      cvs.beginPath();
+      cvs.moveTo(50, 50);
+      cvs.lineTo(150, 50);
+      cvs.strokeStyle="red"
+      cvs.stroke();
 
-    <!-- CANVAS HTML GOES HERE -->
-  </div>
+      cvs.beginPath();
+      cvs.moveTo(150, 50);
+      cvs.lineTo(150, 150);
+      cvs.strokeStyle="blue"
+      cvs.stroke();
 
-  <script>
-    /* CANVAS JAVASCRIPT GOES HERE */
-  </script>
-</body>
+      cvs.beginPath();
+      cvs.moveTo(150, 150);
+      cvs.lineTo(50, 150);
+      cvs.strokeStyle="yellow"
+      cvs.stroke();
+
+      cvs.beginPath();
+      cvs.moveTo(50, 150);
+      cvs.lineTo(50, 50);
+      cvs.strokeStyle="white"
+      cvs.stroke();
+
+      
+      
+    </script>
+  </body>
 </html>
